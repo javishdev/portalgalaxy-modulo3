@@ -1,7 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using PortalGalaxy.DataAccess;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddDbContext<PortalGalaxyDbContext>(options => 
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("GalaxyDatabase"));
+});
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
