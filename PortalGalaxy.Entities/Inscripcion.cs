@@ -12,6 +12,6 @@ namespace PortalGalaxy.Entities
         public int AlumnoId { get; set; }
         public Taller Taller { get; set; }=default!;
         public int TallerId { get; set; }
-        public SituacionTaller situacionTaller { get; set; }
+        public SituacionTaller situacion { get; set; }
     }
 }
